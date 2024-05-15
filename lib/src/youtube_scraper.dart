@@ -4,7 +4,6 @@ import 'model/subtitle_track.dart';
 import 'youtube_scraper_http_client.dart';
 import 'youtube_scraper_impl.dart';
 
-
 /// YouTube caption/subtitle scraper.
 ///
 /// In order to get subtitles of a YouTube video, you first
@@ -38,7 +37,8 @@ abstract class YoutubeScraper {
   /// the video URL you're interested in.
   Future<List<SubtitleLine>> getSubtitlesTrack(SubtitleTrack captionTrack);
 
-  Future<List<SubtitleLine>> getSubtitles({required String videoId, String languageCode = 'en'});
+  Future<List<SubtitleLine>> getSubtitles(
+      {required String videoId, String languageCode = 'en'});
 
   Future<VideoInfo> getVideoInfo({required String videoId});
 }

@@ -50,7 +50,8 @@ class YouTubeScraperImpl implements YoutubeScraper {
       '("captionTracks":.*}]$trailingString)',
     );
     final match = regex.firstMatch(responseBody);
-    final matchedData = responseBody.substring(match!.start, match.end - trailingString.length);
+    final matchedData =
+        responseBody.substring(match!.start, match.end - trailingString.length);
     final json = jsonDecode('{$matchedData}');
     final List captionTracks = json['captionTracks'];
     return List.generate(
@@ -60,7 +61,8 @@ class YouTubeScraperImpl implements YoutubeScraper {
   }
 
   @override
-  Future<List<SubtitleLine>> getSubtitlesTrack(SubtitleTrack captionTrack) async {
+  Future<List<SubtitleLine>> getSubtitlesTrack(
+      SubtitleTrack captionTrack) async {
     final response = await _httpClient.get(Uri.parse(captionTrack.baseUrl));
     final lines = response.body
         .replaceFirst('<?xml version="1.0" encoding="utf-8" ?><transcript>', '')
@@ -115,7 +117,8 @@ class YouTubeScraperImpl implements YoutubeScraper {
   }
 
   @override
-  Future<List<SubtitleLine>> getSubtitles({required String videoId, String languageCode = 'en'}) async {
+  Future<List<SubtitleLine>> getSubtitles(
+      {required String videoId, String languageCode = 'en'}) async {
     try {
       LanguageCodes.fromLocale(Locale(languageCode));
     } catch (ex) {
@@ -136,7 +139,8 @@ class YouTubeScraperImpl implements YoutubeScraper {
       if (indexSupportLanguage == -1) {
         throw const LanguageCodesNotSupportException();
       } else {
-        List<SubtitleLine> subLine = await getSubtitlesTrack(subTracks[indexSupportLanguage]);
+        List<SubtitleLine> subLine =
+            await getSubtitlesTrack(subTracks[indexSupportLanguage]);
         return subLine;
       }
     }
@@ -146,7 +150,8 @@ class YouTubeScraperImpl implements YoutubeScraper {
   Future<VideoInfo> getVideoInfo({required String videoId}) async {
     final response = await _httpClient.get(Uri.parse(videoURL(videoId)));
     LanguageCodes.en;
-    if (response.statusCode == 404) { //page not found
+    if (response.statusCode == 404) {
+      //page not found
       throw const VideoNotFound();
     }
 
@@ -159,14 +164,14 @@ class YouTubeScraperImpl implements YoutubeScraper {
     }
   }
 
-
   Future<VideoInfo> _parseVideoInfo(String responseBody) async {
     String videoDetailTag = '"videoDetails":';
     final regexDetail = RegExp(
       '($videoDetailTag{"videoId":.*"isLiveContent":(true|false)})',
     );
     final matchDetail = regexDetail.firstMatch(responseBody);
-    final matchedDataDetail = responseBody.substring(matchDetail!.start + videoDetailTag.length, matchDetail.end);
+    final matchedDataDetail = responseBody.substring(
+        matchDetail!.start + videoDetailTag.length, matchDetail.end);
     final jsonDetail = jsonDecode(matchedDataDetail);
     VideoInfo videoInfo = VideoInfo.fromJson(jsonDetail);
     List<String> languageSupport = [];
