@@ -1,6 +1,4 @@
-
 import 'package:youtube_scraper/src/model/video_info.dart';
-
 import 'model/subtitle_line.dart';
 import 'model/subtitle_track.dart';
 import 'youtube_scraper_http_client.dart';

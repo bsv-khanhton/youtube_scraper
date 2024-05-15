@@ -1,14 +1,10 @@
 import 'dart:convert';
 import 'dart:ui';
-
 import 'package:html/parser.dart' show parse;
 import 'package:http/http.dart' as http;
 import 'package:language_code/language_code.dart';
 import 'package:youtube_scraper/src/model/video_info.dart';
-
 import '../youtube_scraper.dart';
-import 'model/subtitle_line.dart';
-import 'model/subtitle_track.dart';
 import 'model/subtitle_track_dto.dart';
 import 'youtube_scraper_http_client.dart';
 

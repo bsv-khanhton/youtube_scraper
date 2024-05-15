@@ -1,4 +1,3 @@
-
 class VideoInfo {
   String? videoId;
   String? title;

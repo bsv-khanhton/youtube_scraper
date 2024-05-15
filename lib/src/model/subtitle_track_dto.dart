@@ -1,4 +1,3 @@
-
 import '../../youtube_scraper.dart';
 
 class SubtitleTrackDTO {

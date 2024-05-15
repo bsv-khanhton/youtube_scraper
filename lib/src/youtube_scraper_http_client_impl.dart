@@ -1,5 +1,4 @@
 import 'package:http/http.dart' as http;
-
 import 'youtube_scraper_http_client.dart';
 
 /// The default [http]-based implementation of [YouTubeSubtitleScraperHttpClient].
