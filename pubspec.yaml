@@ -1,6 +1,6 @@
 name: youtube_scraper
 description: Provides a simple and efficient way to retrieve video information and subtitles from YouTube using the video's ID.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/bsv-khanhton/youtube_scraper
 repository: https://github.com/bsv-khanhton/youtube_scraper
 

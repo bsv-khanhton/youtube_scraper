@@ -1,4 +1,7 @@
-## 0.0.3
+## 0.0.4
+
+- Fix format code.
+- ## 0.0.3
 
 - Fix format file dart.
 ## 0.0.2
