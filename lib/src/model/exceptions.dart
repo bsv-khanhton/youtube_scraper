@@ -13,4 +13,3 @@ class LanguageCodesFormatException implements Exception {
 class LanguageCodesNotSupportException implements Exception {
   const LanguageCodesNotSupportException();
 }
-

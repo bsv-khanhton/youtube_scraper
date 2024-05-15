@@ -18,20 +18,20 @@ class VideoInfo {
 
   VideoInfo(
       {this.videoId,
-        this.title,
-        this.lengthSeconds,
-        this.keywords,
-        this.channelId,
-        this.isOwnerViewing,
-        this.shortDescription,
-        this.isCrawlable,
-        this.thumbnail,
-        this.allowRatings,
-        this.viewCount,
-        this.author,
-        this.isPrivate,
-        this.isUnpluggedCorpus,
-        this.isLiveContent});
+      this.title,
+      this.lengthSeconds,
+      this.keywords,
+      this.channelId,
+      this.isOwnerViewing,
+      this.shortDescription,
+      this.isCrawlable,
+      this.thumbnail,
+      this.allowRatings,
+      this.viewCount,
+      this.author,
+      this.isPrivate,
+      this.isUnpluggedCorpus,
+      this.isLiveContent});
 
   VideoInfo.fromJson(Map<String, dynamic> json) {
     videoId = json['videoId'];
